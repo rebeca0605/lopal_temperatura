@@ -53,15 +53,13 @@ public class TelaConversor {
 
 					double celsius = Double.parseDouble(textCelsius);
 
-					Temperatura fahrenheit = new Temperatura();
-					fahrenheit.setCelsius(celsius);
-					celsius = fahrenheit.converterParaFahrenheit();
-
-					labelResultado.setText(String.valueOf(Math.round(celsius) + "  FAHRENHEIT"));
+					double fahrenheit = (celsius * 1.8) + 32;
+					labelResultado.setText(String.format("%.1f  FAHRENHEIT", fahrenheit));
 
 				} catch (NumberFormatException e2) {
 
-					labelMensagemErro.setText("<html> Conversão não realizada! <br> Por favor, insira apenas números.<html>");
+					labelMensagemErro
+							.setText("<html> Conversão não realizada! <br> Por favor, insira apenas números.<html>");
 
 				}
 
@@ -83,15 +81,13 @@ public class TelaConversor {
 
 					double celsius = Double.parseDouble(textCelsius);
 
-					Temperatura kelvin = new Temperatura();
-					kelvin.setCelsius(celsius);
-					celsius = kelvin.converterParaKelvin();
-
-					labelResultado.setText(String.valueOf(Math.round(celsius) + "  KELVIN"));
+					double kelvin = celsius + 273.15;
+					labelResultado.setText(String.format("%.2f  KELVIN", kelvin));
 
 				} catch (NumberFormatException e2) {
 
-					labelMensagemErro.setText("<html> Conversão não realizada! <br> Por favor, insira apenas números.<html>");
+					labelMensagemErro
+							.setText("<html> Conversão não realizada! <br> Por favor, insira apenas números.<html>");
 				}
 
 			}
