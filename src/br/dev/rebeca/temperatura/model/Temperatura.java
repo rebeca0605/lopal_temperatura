@@ -17,8 +17,8 @@ public class Temperatura {
 		return kelvin;
 	}
 	
-	public double converterParaFahreinheit() {
-		double fahreinheit = (celsius * 1.8) + 32;
-		return fahreinheit;
+	public double converterParaFahrenheit() {
+		double fahrenheit = (celsius * 1.8) + 32;
+		return fahrenheit;
 	}
 }
